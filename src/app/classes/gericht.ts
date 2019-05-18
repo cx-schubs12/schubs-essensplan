@@ -4,7 +4,7 @@
 export class Gericht {
 
   /**
-   * Die Bezeichnung der Speise (z.B. 'Spaghetti Bolognese').
+   * Die Bezeichnung der Speise (z.B. 'Hähnchen Piccata mit Zucchini und Fenchel').
    */
   Bezeichnung: string;
 
