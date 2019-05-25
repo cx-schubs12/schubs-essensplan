@@ -14,6 +14,7 @@ export class SpeiseplanPage implements OnInit {
 
   loadingFinished: boolean;
   selectedDate: Date = new Date();
+  
 
   hauptgerichte: Gericht[];
   beilagen: Gericht[];
@@ -28,6 +29,10 @@ export class SpeiseplanPage implements OnInit {
   getGericht(id: number): void {
     this.service.ladeGericht(id).subscribe(gericht => console.log(gericht));
   }
+
+datumGeaendert(): void {
+  this.getSpeiseplan();
+}
 
   getSpeiseplan(): void {
 

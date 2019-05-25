@@ -1,17 +1,28 @@
 <ion-content>
   <!-- TODO: Schöneres Layouting für Anzeige von Gerichten -->
-  <ul>
+  
+  <mat-form-field class="Kalendar">
+      <input [(ngModel)]="selectedDate" matInput [matDatepicker]="picker" (dateChange)="datumGeaendert()" placeholder="Choose a date">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <div id="Speiseplan">
 
     <ion-card *ngFor="let gericht of hauptgerichte">
 
       <img src="{{gericht.ImagePfad}}">
+
 
       <ion-card-header>
         <ion-card-title> {{gericht.Bezeichnung}} </ion-card-title>
         <ion-card-subtitle> {{gericht.Kategorie}} </ion-card-subtitle>
       </ion-card-header>
       <ion-card-content class="Preisanzeige">
-          {{ gericht.Preis }}€ 
+        
+          <span class="preis">
+            {{ gericht.Preis |currency: 'EUR'}} 
+          </span>
       </ion-card-content>
     </ion-card>
 
@@ -23,11 +34,10 @@
         <ion-card-subtitle> {{gericht.Kategorie}} </ion-card-subtitle>
       </ion-card-header>
       <ion-card-content class="Preisanzeige">
-        {{ gericht.Preis }}€
+          {{ gericht.Preis |currency: 'EUR'}} 
       </ion-card-content>
 
     </ion-card>
-
-  </ul>
+  </div>
 
 </ion-content>
