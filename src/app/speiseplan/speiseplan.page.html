@@ -1,5 +1,18 @@
 <ion-content>
   <!-- TODO: Schöneres Layouting für Anzeige von Gerichten -->
+
+<div id="start">
+
+  <ion-card class="Hauptblock">
+    <h2 id="title">
+      Speiseplan 
+    </h2>
+    
+    <img class="logo" src="../../assets/hotel-vivendi.svg"/>
+    
+  </ion-card>
+
+</div> 
   
   <mat-form-field class="Kalendar">
       <input [(ngModel)]="selectedDate" matInput [matDatepicker]="picker" (dateChange)="datumGeaendert()" placeholder="Choose a date">
@@ -9,17 +22,24 @@
 
     <div id="Speiseplan">
 
-    <ion-card *ngFor="let gericht of hauptgerichte">
+        <ion-card class="Box" *ngFor="let gericht of hauptgerichte">
+           
+            <ion-card-subtitle> <span class="Kategorie"></span>
+      
+      <span class="Preis"></span>
+      </ion-card-subtitle>
 
-      <img src="{{gericht.ImagePfad}}">
+      <img class="EssensBild" src="{{gericht.ImagePfad}}">
 
 
       <ion-card-header>
-        <ion-card-title> {{gericht.Bezeichnung}} </ion-card-title>
-        <ion-card-subtitle> {{gericht.Kategorie}} </ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content class="Preisanzeige">
-        
+          <ion-card-title> {{gericht.Bezeichnung}} </ion-card-title>
+          <ion-card-subtitle> {{gericht.Kategorie}} </ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content class="Preisanzeige">
+          
+
+
           <span class="preis">
             {{ gericht.Preis |currency: 'EUR'}} 
           </span>
@@ -29,13 +49,14 @@
     <ion-card *ngFor="let gericht of beilagen">
 
 
-      <ion-card-header>
-        <ion-card-title> {{gericht.Bezeichnung}} </ion-card-title>
-        <ion-card-subtitle> {{gericht.Kategorie}} </ion-card-subtitle>
-      </ion-card-header>
-      <ion-card-content class="Preisanzeige">
-          {{ gericht.Preis |currency: 'EUR'}} 
-      </ion-card-content>
+
+        <ion-card-header>
+            <ion-card-title> {{gericht.Bezeichnung}} </ion-card-title>
+            <ion-card-subtitle> {{gericht.Kategorie}} </ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content class="Preisanzeige">
+              {{ gericht.Preis |currency: 'EUR'}} 
+          </ion-card-content>
 
     </ion-card>
   </div>

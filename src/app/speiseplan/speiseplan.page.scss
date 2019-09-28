@@ -6,7 +6,30 @@ ion-card
     width:32%;
     display: inline-block;
 }
-img{
+.Hauptblock {
+    float: center;
+    background-color: rgb(241, 241, 157);
+    width: 1565px;
+    height: 80px;
+    margin: 10px;
+    border: 2px black;
+    
+}
+.logo {
+    max-height: 80px;
+    max-width: 200px;
+    display: inline;
+}
+#title {
+    color: white;
+    padding: 30px;
+    display: inline;
+    font-size: 30px;
+    
+}
+
+
+.EssensBild{
     height: 420px;
     object-fit: cover;
 }
@@ -15,8 +38,14 @@ img{
     flex-wrap: wrap;
 }
 
+.Kategorie {
+
+    display: block;
+    height: 15px;
+}
+
 .Kalendar {
 display: flex;
-align-items: center;
-justify-content: center;
+align-items: right;
+justify-content: right;
 }
